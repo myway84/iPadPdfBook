@@ -7,12 +7,30 @@
 //
 
 #import "AppDelegate.h"
+#import "PDFFileManager.h"
+#import "DataModel.h"
+#import "Book+Operation.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    DLog(@"%@", [PDFFileManager docuemntPath]);
+    
+    NSArray *pdfPathArray = [PDFFileManager fullNamePDFFileOfDocument];
+    NSManagedObjectContext *context = [[DataModel shareInstance] managedObjectContext];
+    [pdfPathArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        DLog(@"%@ ",  obj);
+        
+        [Book createBookTitle:obj  path:[[PDFFileManager docuemntPath] stringByAppendingPathComponent:obj] inMannagedObjectContext:context];
+    }];
+    
+    NSError *error;
+    if ([context hasChanges] && ![context save:&error]) {
+        NSLog(@"%@", error);
+    }
+    
     return YES;
 }
 							
