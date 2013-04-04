@@ -1,0 +1,301 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0498AEC4170D2D5C004507D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0498AEC3170D2D5C004507D2 /* UIKit.framework */; };
+		0498AEC6170D2D5C004507D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0498AEC5170D2D5C004507D2 /* Foundation.framework */; };
+		0498AEC8170D2D5C004507D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0498AEC7170D2D5C004507D2 /* CoreGraphics.framework */; };
+		0498AECE170D2D5C004507D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0498AECC170D2D5C004507D2 /* InfoPlist.strings */; };
+		0498AED0170D2D5C004507D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498AECF170D2D5C004507D2 /* main.m */; };
+		0498AED4170D2D5C004507D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498AED3170D2D5C004507D2 /* AppDelegate.m */; };
+		0498AED6170D2D5C004507D2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0498AED5170D2D5C004507D2 /* Default.png */; };
+		0498AED8170D2D5C004507D2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0498AED7170D2D5C004507D2 /* Default@2x.png */; };
+		0498AEDA170D2D5C004507D2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0498AED9170D2D5C004507D2 /* Default-568h@2x.png */; };
+		0498AEDD170D2D5C004507D2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0498AEDB170D2D5C004507D2 /* MainStoryboard.storyboard */; };
+		0498AEE0170D2D5C004507D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498AEDF170D2D5C004507D2 /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0498AEBF170D2D5C004507D2 /* iPadPdfBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPadPdfBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0498AEC3170D2D5C004507D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0498AEC5170D2D5C004507D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0498AEC7170D2D5C004507D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0498AECB170D2D5C004507D2 /* iPadPdfBook-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iPadPdfBook-Info.plist"; sourceTree = "<group>"; };
+		0498AECD170D2D5C004507D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0498AECF170D2D5C004507D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0498AED1170D2D5C004507D2 /* iPadPdfBook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iPadPdfBook-Prefix.pch"; sourceTree = "<group>"; };
+		0498AED2170D2D5C004507D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0498AED3170D2D5C004507D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0498AED5170D2D5C004507D2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		0498AED7170D2D5C004507D2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		0498AED9170D2D5C004507D2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		0498AEDC170D2D5C004507D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		0498AEDE170D2D5C004507D2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0498AEDF170D2D5C004507D2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0498AEBC170D2D5C004507D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0498AEC4170D2D5C004507D2 /* UIKit.framework in Frameworks */,
+				0498AEC6170D2D5C004507D2 /* Foundation.framework in Frameworks */,
+				0498AEC8170D2D5C004507D2 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0498AEB4170D2D5C004507D2 = {
+			isa = PBXGroup;
+			children = (
+				0498AEC9170D2D5C004507D2 /* iPadPdfBook */,
+				0498AEC2170D2D5C004507D2 /* Frameworks */,
+				0498AEC0170D2D5C004507D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0498AEC0170D2D5C004507D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0498AEBF170D2D5C004507D2 /* iPadPdfBook.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0498AEC2170D2D5C004507D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0498AEC3170D2D5C004507D2 /* UIKit.framework */,
+				0498AEC5170D2D5C004507D2 /* Foundation.framework */,
+				0498AEC7170D2D5C004507D2 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0498AEC9170D2D5C004507D2 /* iPadPdfBook */ = {
+			isa = PBXGroup;
+			children = (
+				0498AED2170D2D5C004507D2 /* AppDelegate.h */,
+				0498AED3170D2D5C004507D2 /* AppDelegate.m */,
+				0498AEDB170D2D5C004507D2 /* MainStoryboard.storyboard */,
+				0498AEDE170D2D5C004507D2 /* ViewController.h */,
+				0498AEDF170D2D5C004507D2 /* ViewController.m */,
+				0498AECA170D2D5C004507D2 /* Supporting Files */,
+			);
+			path = iPadPdfBook;
+			sourceTree = "<group>";
+		};
+		0498AECA170D2D5C004507D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0498AECB170D2D5C004507D2 /* iPadPdfBook-Info.plist */,
+				0498AECC170D2D5C004507D2 /* InfoPlist.strings */,
+				0498AECF170D2D5C004507D2 /* main.m */,
+				0498AED1170D2D5C004507D2 /* iPadPdfBook-Prefix.pch */,
+				0498AED5170D2D5C004507D2 /* Default.png */,
+				0498AED7170D2D5C004507D2 /* Default@2x.png */,
+				0498AED9170D2D5C004507D2 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0498AEBE170D2D5C004507D2 /* iPadPdfBook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0498AEE3170D2D5C004507D2 /* Build configuration list for PBXNativeTarget "iPadPdfBook" */;
+			buildPhases = (
+				0498AEBB170D2D5C004507D2 /* Sources */,
+				0498AEBC170D2D5C004507D2 /* Frameworks */,
+				0498AEBD170D2D5C004507D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iPadPdfBook;
+			productName = iPadPdfBook;
+			productReference = 0498AEBF170D2D5C004507D2 /* iPadPdfBook.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0498AEB6170D2D5C004507D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = JackYi;
+			};
+			buildConfigurationList = 0498AEB9170D2D5C004507D2 /* Build configuration list for PBXProject "iPadPdfBook" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0498AEB4170D2D5C004507D2;
+			productRefGroup = 0498AEC0170D2D5C004507D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0498AEBE170D2D5C004507D2 /* iPadPdfBook */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0498AEBD170D2D5C004507D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0498AECE170D2D5C004507D2 /* InfoPlist.strings in Resources */,
+				0498AED6170D2D5C004507D2 /* Default.png in Resources */,
+				0498AED8170D2D5C004507D2 /* Default@2x.png in Resources */,
+				0498AEDA170D2D5C004507D2 /* Default-568h@2x.png in Resources */,
+				0498AEDD170D2D5C004507D2 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0498AEBB170D2D5C004507D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0498AED0170D2D5C004507D2 /* main.m in Sources */,
+				0498AED4170D2D5C004507D2 /* AppDelegate.m in Sources */,
+				0498AEE0170D2D5C004507D2 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0498AECC170D2D5C004507D2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0498AECD170D2D5C004507D2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0498AEDB170D2D5C004507D2 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0498AEDC170D2D5C004507D2 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0498AEE1170D2D5C004507D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		0498AEE2170D2D5C004507D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0498AEE4170D2D5C004507D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iPadPdfBook/iPadPdfBook-Prefix.pch";
+				INFOPLIST_FILE = "iPadPdfBook/iPadPdfBook-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0498AEE5170D2D5C004507D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iPadPdfBook/iPadPdfBook-Prefix.pch";
+				INFOPLIST_FILE = "iPadPdfBook/iPadPdfBook-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0498AEB9170D2D5C004507D2 /* Build configuration list for PBXProject "iPadPdfBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0498AEE1170D2D5C004507D2 /* Debug */,
+				0498AEE2170D2D5C004507D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0498AEE3170D2D5C004507D2 /* Build configuration list for PBXNativeTarget "iPadPdfBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0498AEE4170D2D5C004507D2 /* Debug */,
+				0498AEE5170D2D5C004507D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0498AEB6170D2D5C004507D2 /* Project object */;
+}
