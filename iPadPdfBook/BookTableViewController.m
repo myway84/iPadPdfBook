@@ -74,7 +74,7 @@
         ReaderViewController *readerViewController = [[ReaderViewController alloc] initWithReaderDocument:document];
 		readerViewController.delegate = self;
         
-        [self presentViewController:readerViewController animated:NO completion:nil];
+        [self presentViewController:readerViewController animated:YES completion:nil];
     }
    
     

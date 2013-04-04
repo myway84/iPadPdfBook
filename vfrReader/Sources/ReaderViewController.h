@@ -31,6 +31,7 @@
 #import "ReaderMainToolbar.h"
 #import "ReaderMainPagebar.h"
 #import "ThumbsViewController.h"
+#import "JKReaderMainBottombar.h"
 
 @class ReaderViewController;
 @class ReaderMainToolbar;
@@ -56,6 +57,8 @@
 	ReaderMainToolbar *mainToolbar;
 
 	ReaderMainPagebar *mainPagebar;
+    
+    JKReaderMainBottombar *mainBottomBar;
 
 	NSMutableDictionary *contentViews;
 

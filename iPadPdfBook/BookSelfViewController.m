@@ -8,6 +8,7 @@
 
 #import "BookSelfViewController.h"
 #import "PDFFileManager.h"
+#import "NoteView.h"
 
 @interface BookSelfViewController ()
 
@@ -48,6 +49,9 @@
 //    DLog(@"%i", 5);
 //
 //    DLog(@"%@",[PDFFileManager fullNamePDFFileOfDocument]);
+    
+    NoteView *noteview = [[NoteView alloc] initWithFrame:CGRectMake(10, 0, 400, 500)];
+    [self.view addSubview:noteview];
 }
 
 - (void)didReceiveMemoryWarning {

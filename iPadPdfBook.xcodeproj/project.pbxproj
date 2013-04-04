@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043E2B51170D7F6A00FC1ED5 /* textview_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 043E2B50170D7F6A00FC1ED5 /* textview_background.png */; };
 		0498AEC4170D2D5C004507D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0498AEC3170D2D5C004507D2 /* UIKit.framework */; };
 		0498AEC6170D2D5C004507D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0498AEC5170D2D5C004507D2 /* Foundation.framework */; };
 		0498AEC8170D2D5C004507D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0498AEC7170D2D5C004507D2 /* CoreGraphics.framework */; };
@@ -72,9 +73,15 @@
 		0498AF84170D30C2004507D2 /* BookTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498AF82170D30C2004507D2 /* BookTableViewController.m */; };
 		0498AF99170D3D99004507D2 /* iPadPdfBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0498AF97170D3D99004507D2 /* iPadPdfBook.xcdatamodeld */; };
 		0498AF9B170D3EE7004507D2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0498AF9A170D3EE7004507D2 /* CoreData.framework */; };
+		0498AFB6170D4AA6004507D2 /* JKReaderMainBottombar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498AFB5170D4AA6004507D2 /* JKReaderMainBottombar.m */; };
+		0498AFC2170D69BF004507D2 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498AFC1170D69BD004507D2 /* NoteView.m */; };
+		0498AFCD170D7185004507D2 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498AFCC170D7184004507D2 /* UIViewExt.m */; };
+		0498AFD2170D72DF004507D2 /* noteview_toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0498AFD1170D72DF004507D2 /* noteview_toolbar.png */; };
+		0498AFD4170D77F0004507D2 /* note_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0498AFD3170D77F0004507D2 /* note_button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		043E2B50170D7F6A00FC1ED5 /* textview_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textview_background.png; sourceTree = "<group>"; };
 		0498AEBF170D2D5C004507D2 /* iPadPdfBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPadPdfBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0498AEC3170D2D5C004507D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0498AEC5170D2D5C004507D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -175,6 +182,14 @@
 		0498AF82170D30C2004507D2 /* BookTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookTableViewController.m; sourceTree = "<group>"; };
 		0498AF98170D3D99004507D2 /* iPadPdfBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iPadPdfBook.xcdatamodel; sourceTree = "<group>"; };
 		0498AF9A170D3EE7004507D2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0498AFB4170D4AA6004507D2 /* JKReaderMainBottombar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JKReaderMainBottombar.h; path = ../../JKReaderMainBottombar.h; sourceTree = "<group>"; };
+		0498AFB5170D4AA6004507D2 /* JKReaderMainBottombar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JKReaderMainBottombar.m; path = ../../JKReaderMainBottombar.m; sourceTree = "<group>"; };
+		0498AFC0170D69BA004507D2 /* NoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteView.h; path = ../vfrReader/Sources/NoteView.h; sourceTree = "<group>"; };
+		0498AFC1170D69BD004507D2 /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteView.m; path = ../vfrReader/Sources/NoteView.m; sourceTree = "<group>"; };
+		0498AFCB170D7184004507D2 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
+		0498AFCC170D7184004507D2 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
+		0498AFD1170D72DF004507D2 /* noteview_toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noteview_toolbar.png; sourceTree = "<group>"; };
+		0498AFD3170D77F0004507D2 /* note_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note_button.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +246,7 @@
 		0498AEC9170D2D5C004507D2 /* iPadPdfBook */ = {
 			isa = PBXGroup;
 			children = (
+				0498AFCE170D719A004507D2 /* Tools */,
 				0498AF72170D305C004507D2 /* Model */,
 				0498AED2170D2D5C004507D2 /* AppDelegate.h */,
 				0498AED3170D2D5C004507D2 /* AppDelegate.m */,
@@ -239,6 +255,8 @@
 				0498AF81170D30C1004507D2 /* BookTableViewController.h */,
 				0498AF82170D30C2004507D2 /* BookTableViewController.m */,
 				0498AF63170D2DF0004507D2 /* iPadStoryboard.storyboard */,
+				0498AFC0170D69BA004507D2 /* NoteView.h */,
+				0498AFC1170D69BD004507D2 /* NoteView.m */,
 				0498AECA170D2D5C004507D2 /* Supporting Files */,
 			);
 			path = iPadPdfBook;
@@ -247,6 +265,9 @@
 		0498AECA170D2D5C004507D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0498AFD1170D72DF004507D2 /* noteview_toolbar.png */,
+				0498AFD3170D77F0004507D2 /* note_button.png */,
+				043E2B50170D7F6A00FC1ED5 /* textview_background.png */,
 				0498AECB170D2D5C004507D2 /* iPadPdfBook-Info.plist */,
 				0498AECC170D2D5C004507D2 /* InfoPlist.strings */,
 				0498AECF170D2D5C004507D2 /* main.m */,
@@ -335,6 +356,8 @@
 				0498AF20170D2D85004507D2 /* ThumbsViewController.m */,
 				0498AF21170D2D85004507D2 /* UIXToolbarView.h */,
 				0498AF22170D2D85004507D2 /* UIXToolbarView.m */,
+				0498AFB4170D4AA6004507D2 /* JKReaderMainBottombar.h */,
+				0498AFB5170D4AA6004507D2 /* JKReaderMainBottombar.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -379,6 +402,15 @@
 				0498AF7A170D30A5004507D2 /* PDFFileManager.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		0498AFCE170D719A004507D2 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				0498AFCB170D7184004507D2 /* UIViewExt.h */,
+				0498AFCC170D7184004507D2 /* UIViewExt.m */,
+			);
+			name = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,6 +490,9 @@
 				0498AF36170D2D85004507D2 /* README in Resources */,
 				0498AF5B170D2D90004507D2 /* README.md in Resources */,
 				0498AF64170D2DF0004507D2 /* iPadStoryboard.storyboard in Resources */,
+				0498AFD2170D72DF004507D2 /* noteview_toolbar.png in Resources */,
+				0498AFD4170D77F0004507D2 /* note_button.png in Resources */,
+				043E2B51170D7F6A00FC1ED5 /* textview_background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +535,9 @@
 				0498AF83170D30C2004507D2 /* BookSelfViewController.m in Sources */,
 				0498AF84170D30C2004507D2 /* BookTableViewController.m in Sources */,
 				0498AF99170D3D99004507D2 /* iPadPdfBook.xcdatamodeld in Sources */,
+				0498AFB6170D4AA6004507D2 /* JKReaderMainBottombar.m in Sources */,
+				0498AFC2170D69BF004507D2 /* NoteView.m in Sources */,
+				0498AFCD170D7185004507D2 /* UIViewExt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +650,7 @@
 				0498AEE5170D2D5C004507D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

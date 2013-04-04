@@ -36,6 +36,7 @@
 
 #define TOOLBAR_HEIGHT 44.0f
 #define PAGEBAR_HEIGHT 48.0f
+#define BOTTOMBAR_HEIGHT 48.0f
 
 #define TAP_AREA_SIZE 48.0f
 
@@ -359,6 +360,14 @@
 	mainPagebar.delegate = self;
 
 	[self.view addSubview:mainPagebar];
+    
+    CGRect bottomRect = viewRect;
+    bottomRect.size.height = BOTTOMBAR_HEIGHT;
+    bottomRect.origin.y = (viewRect.size.height - BOTTOMBAR_HEIGHT);
+    
+    mainBottomBar = [[JKReaderMainBottombar alloc] initWithFrame:bottomRect];
+    
+    [self.view addSubview:mainBottomBar];
 
 	UITapGestureRecognizer *singleTapOne = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
 	singleTapOne.numberOfTouchesRequired = 1; singleTapOne.numberOfTapsRequired = 1; singleTapOne.delegate = self;
@@ -528,6 +537,8 @@
 
 	[lastHideTime release], lastHideTime = nil; [document release], document = nil;
 
+    [mainBottomBar release], mainBottomBar = nil;
+    
 	[super dealloc];
 }
 
@@ -697,9 +708,9 @@
 			{
 				if ([lastHideTime timeIntervalSinceNow] < -0.75) // Delay since hide
 				{
-					if ((mainToolbar.hidden == YES) || (mainPagebar.hidden == YES))
+					if ((mainToolbar.hidden == YES) || (mainPagebar.hidden == YES) || (mainBottomBar.hidden == YES))
 					{
-						[mainToolbar showToolbar]; [mainPagebar showPagebar]; // Show
+						[mainToolbar showToolbar]; [mainPagebar showPagebar]; [mainBottomBar showBottombar]; // Show
 					}
 				}
 			}
@@ -804,7 +815,7 @@
 			if (CGRectContainsPoint(areaRect, point) == false) return;
 		}
 
-		[mainToolbar hideToolbar]; [mainPagebar hidePagebar]; // Hide
+		[mainToolbar hideToolbar]; [mainPagebar hidePagebar]; [mainBottomBar hideBottombar]; // Hide
 
 		[lastHideTime release]; lastHideTime = [NSDate new];
 	}
