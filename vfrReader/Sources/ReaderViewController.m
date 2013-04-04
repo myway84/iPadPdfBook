@@ -367,6 +367,8 @@
     
     mainBottomBar = [[JKReaderMainBottombar alloc] initWithFrame:bottomRect];
     
+    mainBottomBar.delegate = self;
+    
     [self.view addSubview:mainBottomBar];
 
 	UITapGestureRecognizer *singleTapOne = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
@@ -802,7 +804,7 @@
 	NSLog(@"%s", __FUNCTION__);
 #endif
 
-	if ((mainToolbar.hidden == NO) || (mainPagebar.hidden == NO))
+	if ((mainToolbar.hidden == NO) || (mainPagebar.hidden == NO) || (mainBottomBar.hidden == NO))
 	{
 		if (touches.count == 1) // Single touches only
 		{
@@ -1057,4 +1059,12 @@
 	}
 }
 
+#pragma mark JKReaderMainBottomDelegate methods
+- (void)tappedInBottombar:(JKReaderMainBottombar *)bottombar noteButton:(UIButton *)button
+{
+    if ((mainToolbar.hidden == NO) || (mainPagebar.hidden == NO) || (mainBottomBar.hidden == NO))
+    {
+        [mainToolbar hideToolbar]; [mainPagebar hidePagebar]; [mainBottomBar hideBottombar];
+    }
+}
 @end

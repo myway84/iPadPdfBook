@@ -8,8 +8,20 @@
 
 #import "UIXToolbarView.h"
 
+@class JKReaderMainBottombar;
+
+@protocol JKReaderMainBottomDelegate <NSObject>
+@required
+
+- (void)tappedInBottombar:(JKReaderMainBottombar *)bottombar noteButton:(UIButton *)button;
+
+@end
+
 @interface JKReaderMainBottombar : UIXToolbarView
+
+@property (weak, nonatomic) id<JKReaderMainBottomDelegate> delegate;
 
 - (void)hideBottombar;
 - (void)showBottombar;
+
 @end

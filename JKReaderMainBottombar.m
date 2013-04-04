@@ -8,13 +8,38 @@
 
 #import "JKReaderMainBottombar.h"
 
+#define BUTTON_X 8.0f
+#define BUTTON_Y 8.0f
+#define BUTTON_SPACE 8.0f
+#define BUTTON_HEIGHT 30.0f
+
+#define NOTE_BUTTON_WIDTH 56.0f
+
 @implementation JKReaderMainBottombar
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        
+        CGFloat viewWidth = self.bounds.size.width;
+        
+		UIImage *imageH = [UIImage imageNamed:@"Reader-Button-H.png"];
+		UIImage *imageN = [UIImage imageNamed:@"Reader-Button-N.png"];
+        
+		UIImage *buttonH = [imageH resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
+		UIImage *buttonN = [imageN resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
+
+        UIButton *noteButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        
+        [noteButton addTarget:self action: @selector(noteButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+        [noteButton setImage:[UIImage imageNamed:@"write_note_button"] forState:UIControlStateNormal];
+        [noteButton setBackgroundImage:buttonH forState:UIControlStateHighlighted];
+        [noteButton setBackgroundImage:buttonN forState:UIControlStateNormal];
+        noteButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+
+        noteButton.frame = CGRectMake(BUTTON_X, BUTTON_Y, NOTE_BUTTON_WIDTH, BUTTON_HEIGHT);
+        [self addSubview:noteButton];
     }
     return self;
 }
@@ -54,5 +79,12 @@
 }
 
 
+- (void)noteButtonTapped:(UIButton *)button
+{
+#ifdef DEBUGX
+	NSLog(@"%s", __FUNCTION__);
+#endif
+    [self.delegate tappedInBottombar:self noteButton:button];
+}
 
 @end
