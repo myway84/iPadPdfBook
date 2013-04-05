@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "Palette.h"
 
+@class GraffittiViewController;
+
+@protocol GraffittiViewControllerDelegate <NSObject>
+
+- (void)didTappedToolBarIn:(GraffittiViewController*) graffittiViewController exitButton:(UIButton*) button;
+
+@end
+
 @interface GraffittiViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *labelColor;
@@ -23,6 +31,8 @@
 
 @property (assign, nonatomic) CGPoint myBeganpoint;
 @property (assign, nonatomic) CGPoint myMovepoint;
+
+@property (weak, nonatomic) id<GraffittiViewControllerDelegate> delegate;
 
 - (IBAction)chooseColor:(id)sender;
 - (IBAction)chooseWidth:(id)sender;

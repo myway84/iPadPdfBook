@@ -33,7 +33,7 @@
 }
 
 - (IBAction)lineClear:(id)sender {
-    [self.paletteView myalllineclear];
+     self.segment = 10;
 }
 
 - (IBAction)lineRemove:(id)sender {
@@ -41,13 +41,19 @@
 }
 
 - (IBAction)allLineEraser:(id)sender {
-    self.segment = 10;
+    [self.paletteView myalllineclear];
 }
 
 - (IBAction)captureScreen:(id)sender {
+    
 }
 
 - (IBAction)exit:(id)sender {
+    
+    if ([self.delegate respondsToSelector:@selector(didTappedToolBarIn:exitButton:)]) {
+        [self.delegate didTappedToolBarIn:self exitButton:sender];
+    }
+    
 }
 
 -(void)segmentLineColor
@@ -134,7 +140,7 @@
 
 -(void)segmentWidthButton:(id)sender
 {
-	self.segment =[sender selectedSegmentIndex];
+	self.segmentWidth =[sender selectedSegmentIndex];
 	switch (self.segment)
 	{
 		case 0:
@@ -220,5 +226,9 @@
 	//NSLog(@"touches Canelled");
 }
 
+- (void)dealloc
+{
+    NSLog(@"%s", __FUNCTION__);
+}
 
 @end

@@ -32,7 +32,7 @@
 
 @class Palette;
 
-@interface ReaderViewController ()<NoteViewControllerDelegate>
+@interface ReaderViewController ()<NoteViewControllerDelegate, GraffittiViewControllerDelegate>
 
 @end
 @implementation ReaderViewController
@@ -1086,6 +1086,7 @@
 {
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"iPadStoryboard" bundle:nil];
     GraffittiViewController *graffittiViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:NSStringFromClass([GraffittiViewController class])];
+    graffittiViewController.delegate = self;
     
     if ((mainToolbar.hidden == NO) || (mainPagebar.hidden == NO) || (mainBottomBar.hidden == NO))
 	{
@@ -1095,7 +1096,6 @@
     [self addChildViewController:graffittiViewController];
     [self.view addSubview:graffittiViewController.view];
     
-    //   [self.view insertSubview:graffittiViewController.view belowSubview:theScrollView];
 }
 
 #pragma mark NoteViewControllerDelegate methods
@@ -1107,5 +1107,16 @@
 {
     self.book.noteContent = noteViewController.stringNote;
     [Book saveBook:self.book];
+}
+
+#pragma mark GraffittiViewControllerDelegate
+- (void)didTappedToolBarIn:(GraffittiViewController *)graffittiViewController exitButton:(UIButton *)button
+{
+    [graffittiViewController.view removeFromSuperview];
+    [graffittiViewController removeFromParentViewController];
+    
+    if ((mainToolbar.hidden == YES) || (mainPagebar.hidden == YES) || (mainBottomBar.hidden == YES)) {
+        [mainToolbar showToolbar]; [mainPagebar showPagebar]; [mainBottomBar showBottombar];
+    }
 }
 @end
