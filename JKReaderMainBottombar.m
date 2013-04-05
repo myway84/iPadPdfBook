@@ -14,6 +14,7 @@
 #define BUTTON_HEIGHT 30.0f
 
 #define NOTE_BUTTON_WIDTH 56.0f
+#define GRAFFITI_BUTTON_WIDTH 56.0f
 
 @implementation JKReaderMainBottombar
 
@@ -22,7 +23,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        CGFloat viewWidth = self.bounds.size.width;
         
 		UIImage *imageH = [UIImage imageNamed:@"Reader-Button-H.png"];
 		UIImage *imageN = [UIImage imageNamed:@"Reader-Button-N.png"];
@@ -40,6 +40,16 @@
 
         noteButton.frame = CGRectMake(BUTTON_X, BUTTON_Y, NOTE_BUTTON_WIDTH, BUTTON_HEIGHT);
         [self addSubview:noteButton];
+        
+        
+        UIButton *graffitiButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [graffitiButton addTarget:self action:@selector(graffiButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+        [graffitiButton setBackgroundImage:buttonH forState:UIControlStateHighlighted];
+        [graffitiButton setBackgroundImage:buttonN forState:UIControlStateNormal];
+        graffitiButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+        
+        graffitiButton.frame = CGRectMake(self.right-BUTTON_X-GRAFFITI_BUTTON_WIDTH, BUTTON_Y, GRAFFITI_BUTTON_WIDTH, BUTTON_HEIGHT);
+        [self addSubview:graffitiButton];
     }
     return self;
 }
@@ -85,6 +95,14 @@
 	NSLog(@"%s", __FUNCTION__);
 #endif
     [self.delegate tappedInBottombar:self noteButton:button];
+}
+
+- (void)graffiButtonTapped:(UIButton *)button
+{
+#ifdef DEBUGX
+	NSLog(@"%s", __FUNCTION__);
+#endif
+    [self.delegate tappedInBottombar:self graffittiButton:button];
 }
 
 @end

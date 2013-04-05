@@ -1077,6 +1077,11 @@
    
 }
 
+- (void)tappedInBottombar:(JKReaderMainBottombar *)bottombar graffittiButton:(UIButton *)button
+{
+    
+}
+
 #pragma mark NoteViewControllerDelegate methods
 - (void)didTappedToolBarIn:(NoteViewController *)noteViewController cancleButton:(UIButton *)button
 {

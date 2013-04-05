@@ -14,6 +14,7 @@
 @required
 
 - (void)tappedInBottombar:(JKReaderMainBottombar *)bottombar noteButton:(UIButton *)button;
+- (void)tappedInBottombar:(JKReaderMainBottombar *)bottombar graffittiButton:(UIButton *)button;
 
 @end
 
