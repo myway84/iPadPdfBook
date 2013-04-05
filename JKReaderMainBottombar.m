@@ -36,7 +36,6 @@
         [noteButton setImage:[UIImage imageNamed:@"write_note_button"] forState:UIControlStateNormal];
         [noteButton setBackgroundImage:buttonH forState:UIControlStateHighlighted];
         [noteButton setBackgroundImage:buttonN forState:UIControlStateNormal];
-        noteButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
 
         noteButton.frame = CGRectMake(BUTTON_X, BUTTON_Y, NOTE_BUTTON_WIDTH, BUTTON_HEIGHT);
         [self addSubview:noteButton];

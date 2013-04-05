@@ -375,8 +375,11 @@
     mainBottomBar = [[JKReaderMainBottombar alloc] initWithFrame:bottomRect];
     
     mainBottomBar.delegate = self;
+     mainBottomBar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
     
     [self.view addSubview:mainBottomBar];
+    
+   
 
 	UITapGestureRecognizer *singleTapOne = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
 	singleTapOne.numberOfTouchesRequired = 1; singleTapOne.numberOfTapsRequired = 1; singleTapOne.delegate = self;
