@@ -21,13 +21,10 @@
     textViewImageView.image = [UIImage imageNamed:@"textview_background"];
     [self.noteTextView addSubview:textViewImageView];
     [self.noteTextView sendSubviewToBack:textViewImageView];
+    
+    self.noteTextView.text = self.stringNote;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
- 
-}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -69,8 +66,16 @@
 
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
+}
 
 - (IBAction)onTappedCancleButton:(id)sender {
+    
+    self.stringNote = self.noteTextView.text;
+    
     [self.noteTextView resignFirstResponder];
     if ([self.delegate respondsToSelector:@selector(didTappedToolBarIn:cancleButton:)]) {
         [self.delegate didTappedToolBarIn:self cancleButton:sender];
@@ -78,6 +83,9 @@
 }
 
 - (IBAction)onTappedSaveButton:(id)sender {
+    
+    self.stringNote = self.noteTextView.text;
+    
     [self.noteTextView resignFirstResponder];
     if ([self.delegate respondsToSelector:@selector(didTappedToolBarIn:saveButton:)]) {
         [self.delegate didTappedToolBarIn:self saveButton:sender];

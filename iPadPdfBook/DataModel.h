@@ -15,6 +15,6 @@
 @property (strong, nonatomic, readonly) NSPersistentStoreCoordinator *persistentSotreCoordinator;
 @property (copy, nonatomic) NSString *databaseName;
 
-+ (id)shareInstance;
++ (DataModel *)shareInstance;
 
 @end

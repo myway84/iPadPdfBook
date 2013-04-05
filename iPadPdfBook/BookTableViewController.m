@@ -73,6 +73,7 @@
     if (document) {
         ReaderViewController *readerViewController = [[ReaderViewController alloc] initWithReaderDocument:document];
 		readerViewController.delegate = self;
+        readerViewController.book = book;
         
         [self presentViewController:readerViewController animated:YES completion:nil];
     }

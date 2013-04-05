@@ -14,7 +14,7 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentSotreCoordinator = _persistentSotreCoordinator;
 
-+ (id)shareInstance
++ (DataModel *)shareInstance
 {
     static DataModel *singleton = nil;
     static dispatch_once_t onceToken;

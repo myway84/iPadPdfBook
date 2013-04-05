@@ -7,6 +7,7 @@
 //
 
 #import "Book+Operation.h"
+#import "DataModel.h"
 
 @implementation Book (Operation)
 + (Book *)createBookTitle:(NSString* )title path:(NSString* )path inMannagedObjectContext:(NSManagedObjectContext *)managedContext
@@ -34,9 +35,16 @@
     }
 }
 
-+ (void)deleteBook:(Book *)book inManagedObjectContext:(NSManagedObjectContext  *)mannagedContext
++ (void)deleteBook:(Book *)book 
 {
-    [mannagedContext delete:book];
+    [[DataModel shareInstance].managedObjectContext delete:book];
 }
 
++ (void)saveBook:(Book *)book
+{
+    if ([book hasChanges]) {
+        [[DataModel shareInstance].managedObjectContext save:nil];
+
+    }
+}
 @end

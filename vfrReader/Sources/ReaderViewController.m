@@ -1084,5 +1084,7 @@
 
 - (void)didTappedToolBarIn:(NoteViewController *)noteViewController saveButton:(UIButton *)button
 {
+    self.book.noteContent = noteViewController.stringNote;
+    [Book saveBook:self.book];
 }
 @end
