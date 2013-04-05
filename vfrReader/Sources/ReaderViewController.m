@@ -27,7 +27,11 @@
 #import "ReaderViewController.h"
 #import "ReaderThumbCache.h"
 #import "ReaderThumbQueue.h"
+#import "NoteViewController.h"
 
+@interface ReaderViewController ()<NoteViewControllerDelegate>
+
+@end
 @implementation ReaderViewController
 
 #pragma mark Constants
@@ -1062,9 +1066,23 @@
 #pragma mark JKReaderMainBottomDelegate methods
 - (void)tappedInBottombar:(JKReaderMainBottombar *)bottombar noteButton:(UIButton *)button
 {
-    if ((mainToolbar.hidden == NO) || (mainPagebar.hidden == NO) || (mainBottomBar.hidden == NO))
-    {
-        [mainToolbar hideToolbar]; [mainPagebar hidePagebar]; [mainBottomBar hideBottombar];
-    }
+   
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"iPadStoryboard" bundle:nil];
+    NoteViewController *noteViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:NSStringFromClass([NoteViewController class])];
+    noteViewController.stringNote = self.book.noteContent;
+    noteViewController.delegate = self;
+    
+    [self addChildViewController:noteViewController];
+    [self.view addSubview:noteViewController.view];
+   
+}
+
+#pragma mark NoteViewControllerDelegate methods
+- (void)didTappedToolBarIn:(NoteViewController *)noteViewController cancleButton:(UIButton *)button
+{
+}
+
+- (void)didTappedToolBarIn:(NoteViewController *)noteViewController saveButton:(UIButton *)button
+{
 }
 @end

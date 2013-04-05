@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		043E2B51170D7F6A00FC1ED5 /* textview_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 043E2B50170D7F6A00FC1ED5 /* textview_background.png */; };
 		043E2B58170D8D6600FC1ED5 /* write_note_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 043E2B57170D8D6600FC1ED5 /* write_note_button.png */; };
+		043E2B5B170D94D800FC1ED5 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043E2B5A170D94D800FC1ED5 /* NoteViewController.m */; };
 		0498AEC4170D2D5C004507D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0498AEC3170D2D5C004507D2 /* UIKit.framework */; };
 		0498AEC6170D2D5C004507D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0498AEC5170D2D5C004507D2 /* Foundation.framework */; };
 		0498AEC8170D2D5C004507D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0498AEC7170D2D5C004507D2 /* CoreGraphics.framework */; };
@@ -84,6 +85,8 @@
 /* Begin PBXFileReference section */
 		043E2B50170D7F6A00FC1ED5 /* textview_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textview_background.png; sourceTree = "<group>"; };
 		043E2B57170D8D6600FC1ED5 /* write_note_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = write_note_button.png; sourceTree = "<group>"; };
+		043E2B59170D94D800FC1ED5 /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
+		043E2B5A170D94D800FC1ED5 /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
 		0498AEBF170D2D5C004507D2 /* iPadPdfBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPadPdfBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0498AEC3170D2D5C004507D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0498AEC5170D2D5C004507D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -257,6 +260,8 @@
 				0498AF81170D30C1004507D2 /* BookTableViewController.h */,
 				0498AF82170D30C2004507D2 /* BookTableViewController.m */,
 				0498AF63170D2DF0004507D2 /* iPadStoryboard.storyboard */,
+				043E2B59170D94D800FC1ED5 /* NoteViewController.h */,
+				043E2B5A170D94D800FC1ED5 /* NoteViewController.m */,
 				0498AFC0170D69BA004507D2 /* NoteView.h */,
 				0498AFC1170D69BD004507D2 /* NoteView.m */,
 				0498AECA170D2D5C004507D2 /* Supporting Files */,
@@ -542,6 +547,7 @@
 				0498AFB6170D4AA6004507D2 /* JKReaderMainBottombar.m in Sources */,
 				0498AFC2170D69BF004507D2 /* NoteView.m in Sources */,
 				0498AFCD170D7185004507D2 /* UIViewExt.m in Sources */,
+				043E2B5B170D94D800FC1ED5 /* NoteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

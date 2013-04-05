@@ -32,6 +32,7 @@
 #import "ReaderMainPagebar.h"
 #import "ThumbsViewController.h"
 #import "JKReaderMainBottombar.h"
+#import "Book+Operation.h"
 
 @class ReaderViewController;
 @class ReaderMainToolbar;
@@ -74,6 +75,8 @@
 }
 
 @property (nonatomic, assign, readwrite) id <ReaderViewControllerDelegate> delegate;
+
+@property (strong, nonatomic) Book *book;
 
 - (id)initWithReaderDocument:(ReaderDocument *)object;
 
