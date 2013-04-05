@@ -80,6 +80,8 @@
 		0498AFCD170D7185004507D2 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498AFCC170D7184004507D2 /* UIViewExt.m */; };
 		0498AFD2170D72DF004507D2 /* noteview_toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0498AFD1170D72DF004507D2 /* noteview_toolbar.png */; };
 		0498AFD4170D77F0004507D2 /* note_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0498AFD3170D77F0004507D2 /* note_button.png */; };
+		049D2BAE170E9FC40025E31E /* GraffittiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049D2BAD170E9FC40025E31E /* GraffittiViewController.m */; };
+		049D2BCD170EAF2D0025E31E /* Palette.m in Sources */ = {isa = PBXBuildFile; fileRef = 049D2BCC170EAF2D0025E31E /* Palette.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -195,6 +197,10 @@
 		0498AFCC170D7184004507D2 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		0498AFD1170D72DF004507D2 /* noteview_toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noteview_toolbar.png; sourceTree = "<group>"; };
 		0498AFD3170D77F0004507D2 /* note_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note_button.png; sourceTree = "<group>"; };
+		049D2BAC170E9FC40025E31E /* GraffittiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraffittiViewController.h; sourceTree = "<group>"; };
+		049D2BAD170E9FC40025E31E /* GraffittiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraffittiViewController.m; sourceTree = "<group>"; };
+		049D2BCB170EAF2C0025E31E /* Palette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Palette.h; sourceTree = "<group>"; };
+		049D2BCC170EAF2D0025E31E /* Palette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Palette.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,8 +268,12 @@
 				0498AF63170D2DF0004507D2 /* iPadStoryboard.storyboard */,
 				043E2B59170D94D800FC1ED5 /* NoteViewController.h */,
 				043E2B5A170D94D800FC1ED5 /* NoteViewController.m */,
+				049D2BAC170E9FC40025E31E /* GraffittiViewController.h */,
+				049D2BAD170E9FC40025E31E /* GraffittiViewController.m */,
 				0498AFC0170D69BA004507D2 /* NoteView.h */,
 				0498AFC1170D69BD004507D2 /* NoteView.m */,
+				049D2BCB170EAF2C0025E31E /* Palette.h */,
+				049D2BCC170EAF2D0025E31E /* Palette.m */,
 				0498AECA170D2D5C004507D2 /* Supporting Files */,
 			);
 			path = iPadPdfBook;
@@ -548,6 +558,8 @@
 				0498AFC2170D69BF004507D2 /* NoteView.m in Sources */,
 				0498AFCD170D7185004507D2 /* UIViewExt.m in Sources */,
 				043E2B5B170D94D800FC1ED5 /* NoteViewController.m in Sources */,
+				049D2BAE170E9FC40025E31E /* GraffittiViewController.m in Sources */,
+				049D2BCD170EAF2D0025E31E /* Palette.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

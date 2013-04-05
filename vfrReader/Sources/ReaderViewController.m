@@ -28,6 +28,9 @@
 #import "ReaderThumbCache.h"
 #import "ReaderThumbQueue.h"
 #import "NoteViewController.h"
+#import "GraffittiViewController.h"
+
+@class Palette;
 
 @interface ReaderViewController ()<NoteViewControllerDelegate>
 
@@ -596,6 +599,7 @@
 
 	if ([touch.view isKindOfClass:[UIScrollView class]]) return YES;
 
+    
 	return NO;
 }
 
@@ -1072,6 +1076,7 @@
     noteViewController.stringNote = self.book.noteContent;
     noteViewController.delegate = self;
     
+    
     [self addChildViewController:noteViewController];
     [self.view addSubview:noteViewController.view];
    
@@ -1079,7 +1084,18 @@
 
 - (void)tappedInBottombar:(JKReaderMainBottombar *)bottombar graffittiButton:(UIButton *)button
 {
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"iPadStoryboard" bundle:nil];
+    GraffittiViewController *graffittiViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:NSStringFromClass([GraffittiViewController class])];
     
+    if ((mainToolbar.hidden == NO) || (mainPagebar.hidden == NO) || (mainBottomBar.hidden == NO))
+	{
+		[mainToolbar hideToolbar]; [mainPagebar hidePagebar]; [mainBottomBar hideBottombar]; // Hide
+    }
+    
+    [self addChildViewController:graffittiViewController];
+    [self.view addSubview:graffittiViewController.view];
+    
+    //   [self.view insertSubview:graffittiViewController.view belowSubview:theScrollView];
 }
 
 #pragma mark NoteViewControllerDelegate methods
