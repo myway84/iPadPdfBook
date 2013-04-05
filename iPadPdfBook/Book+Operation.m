@@ -10,8 +10,10 @@
 #import "DataModel.h"
 
 @implementation Book (Operation)
-+ (Book *)createBookTitle:(NSString* )title path:(NSString* )path inMannagedObjectContext:(NSManagedObjectContext *)managedContext
++ (Book *)createBookTitle:(NSString* )title path:(NSString* )path
 {
+    
+    NSManagedObjectContext *managedContext = [DataModel shareInstance].managedObjectContext;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Book"];
     [request setPredicate:[NSPredicate predicateWithFormat:@"path = %@", path]];
     

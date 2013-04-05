@@ -10,7 +10,7 @@
 
 @interface Book (Operation)
 
-+ (Book *)createBookTitle:(NSString* )title path:(NSString* )path inMannagedObjectContext:(NSManagedObjectContext *)managedContext;
++ (Book *)createBookTitle:(NSString* )title path:(NSString* )path;
 + (void)deleteBook:(Book *)book;
 + (void)saveBook:(Book *)book;
 
