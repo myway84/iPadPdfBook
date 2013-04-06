@@ -31,4 +31,11 @@
     return pdfFileNameArray;
 }
 
++ (void)deleteDocumentPath:(NSString *)path
+{
+    NSFileManager *fileManeger = [NSFileManager defaultManager];
+    if ([fileManeger fileExistsAtPath:path]) {
+        [fileManeger removeItemAtPath:path error:nil];
+    }
+}
 @end

@@ -8,6 +8,7 @@
 
 #import "Book+Operation.h"
 #import "DataModel.h"
+#import "PDFFileManager.h"
 
 @implementation Book (Operation)
 + (Book *)createBookTitle:(NSString* )title path:(NSString* )path
@@ -39,7 +40,14 @@
 
 + (void)deleteBook:(Book *)book 
 {
-    [[DataModel shareInstance].managedObjectContext delete:book];
+
+    [[DataModel shareInstance].managedObjectContext deleteObject:book];
+    if ([book hasChanges]) {
+        [PDFFileManager deleteDocumentPath:book.path];
+
+        [[DataModel shareInstance].managedObjectContext save:nil];
+        
+    }
 }
 
 + (void)saveBook:(Book *)book

@@ -12,5 +12,5 @@
 
 + (NSString *)docuemntPath;
 + (NSArray *)fullNamePDFFileOfDocument;
-
++ (void)deleteDocumentPath:(NSString *)path;
 @end
