@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+static BOOL allline=NO;
 
 @interface Palette : UIView
 {

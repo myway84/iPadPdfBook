@@ -79,7 +79,7 @@
 	//设置画线的连接处　拐点圆滑
 	CGContextSetLineJoin(context, kCGLineJoinRound);
 	//第一次时候个myallline开辟空间
-	static BOOL allline=NO;
+	
 	if (allline==NO)
 	{
 		myallline=[[NSMutableArray alloc] initWithCapacity:10];
@@ -236,6 +236,8 @@
 }
 - (void)dealloc 
 {
+    allline = NO;
+    
     NSLog(@"%s", __FUNCTION__);
     [super dealloc];
 }
