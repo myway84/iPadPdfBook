@@ -25,7 +25,7 @@
 }
 
 - (IBAction)chooseColor:(id)sender {
-    [self segmentLineColor];
+    [self colorSegment];
 }
 
 - (IBAction)chooseWidth:(id)sender {
@@ -56,20 +56,22 @@
     
 }
 
--(void)segmentLineColor
+-(UISegmentedControl *)colorSegment
 {
-	NSArray* segmentArray= @[@"黑", @"红", @"蓝", @"绿", @"黄", @"橙", @"灰", @"紫", @"紫", @"棕", @"粉红"];
-    UISegmentedControl *seg =[[UISegmentedControl alloc] initWithItems:segmentArray];
-	CGRect ButtonRect=CGRectMake(0, 0, 320, 40);
-	[seg setFrame:ButtonRect];
-	[seg setMomentary:YES];
-	[seg addTarget:self action:@selector(segmentColorButton:)
-		  forControlEvents:UIControlEventValueChanged];
-	[seg setSegmentedControlStyle:UISegmentedControlStyleBar];
-	[seg setTintColor:[UIColor darkGrayColor]];
-	[self.view addSubview:seg];
-    
-    self.colorButton = seg;
+    if (nil == _colorSegment) {
+        NSArray* segmentArray= @[@"黑", @"红", @"蓝", @"绿", @"黄", @"橙", @"灰", @"紫", @"紫", @"棕", @"粉红"];
+        UISegmentedControl *seg =[[UISegmentedControl alloc] initWithItems:segmentArray];
+        CGRect ButtonRect=CGRectMake(0, 0, 320, 40);
+        [seg setFrame:ButtonRect];
+        [seg setMomentary:YES];
+        [seg addTarget:self action:@selector(segmentColorButton:)
+      forControlEvents:UIControlEventValueChanged];
+        [seg setSegmentedControlStyle:UISegmentedControlStyleBar];
+        [seg setTintColor:[UIColor darkGrayColor]];
+        [self.view addSubview:seg];
+        _colorSegment = seg;
+    }
+    return _colorSegment;
 }
 
 -(void)segmentColorButton:(id)sender
@@ -122,20 +124,24 @@
 	}
 }
 
--(void)segmentLineWidth
+-(UISegmentedControl *)segmentLineWidth
 {
-	NSArray* segmentArray= @[@"1.0", @"2.0", @"3.0", @"4.0", @"5.0", @"6.0", @"7.0", @"8.0", @"9.0", @"12.0"];
-    UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:segmentArray];
-	CGRect ButtonRect=CGRectMake(0, 0, 320, 40);
-	[seg setFrame:ButtonRect];
-	[seg setMomentary:YES];
-	[seg addTarget:self action:@selector(segmentWidthButton:)
-		  forControlEvents:UIControlEventValueChanged];
-	
-	[seg setSegmentedControlStyle:UISegmentedControlStyleBar];
-	[seg setTintColor:[UIColor darkGrayColor]];
-	
-	[self.view addSubview:seg];
+    if (nil == _widthSegment) {
+        NSArray* segmentArray= @[@"1.0", @"2.0", @"3.0", @"4.0", @"5.0", @"6.0", @"7.0", @"8.0", @"9.0", @"12.0"];
+        UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:segmentArray];
+        CGRect ButtonRect=CGRectMake(0, 0, 320, 40);
+        [seg setFrame:ButtonRect];
+        [seg setMomentary:YES];
+        [seg addTarget:self action:@selector(segmentWidthButton:)
+      forControlEvents:UIControlEventValueChanged];
+        
+        [seg setSegmentedControlStyle:UISegmentedControlStyleBar];
+        [seg setTintColor:[UIColor darkGrayColor]];
+        [self.view addSubview:seg];
+        _widthSegment = seg;
+    }
+		
+	return _widthSegment;
 }
 
 -(void)segmentWidthButton:(id)sender
@@ -194,9 +200,13 @@
 //手指开始触屏开始
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    if ((self.widthSegment.hidden == NO) || (self.colorSegment.hidden == NO)) {
+        self.widthSegment.hidden = YES;
+        self.colorSegment.hidden = YES;
+    }
     
-	[self.colorButton removeAllSegments];
-	[self.widthButton removeAllSegments];
+	[self.colorSegment removeAllSegments];
+	[self.widthSegment removeAllSegments];
 	UITouch* touch=[touches anyObject];
 	self.myBeganpoint=[touch locationInView:self.view ];
 	

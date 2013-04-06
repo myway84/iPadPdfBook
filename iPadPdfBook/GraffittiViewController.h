@@ -23,8 +23,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelFont;
 @property (weak, nonatomic) IBOutlet Palette *paletteView;
 
-@property (weak, nonatomic) UISegmentedControl *widthButton;
-@property (weak, nonatomic) UISegmentedControl *colorButton;
+@property (weak, nonatomic) UISegmentedControl *widthSegment;
+@property (weak, nonatomic) UISegmentedControl *colorSegment;
 
 @property (assign, nonatomic) int segment;
 @property (assign, nonatomic) int segmentWidth;
