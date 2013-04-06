@@ -27,6 +27,8 @@
   //  self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor yellowColor] forKey:UITextAttributeTextColor];
     
     [self.fetchedResultsController performFetch:nil];
+    
+    [self.myTableView setEditing:NO animated:YES];
 }
 
 - (void)setCenterTitleView
@@ -81,17 +83,19 @@
     
     Book *book = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [book title];
+    
+    [cell setEditing:NO animated:YES];
     return cell;
 }
 
 
-//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return YES;
-//}
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return NO;
+}
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+    if (editingStyle == UITableViewCellEditingStyleNone) {
        Book *deleteBook = [self.fetchedResultsController objectAtIndexPath:indexPath];
        [Book deleteBook:deleteBook];
     }
@@ -113,6 +117,14 @@
     }
    
 }
+
+//- (UITableViewCellAccessoryType)tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath
+//{
+//    if (self.editing) {
+//        return UITableViewCellEditingStyleDelete;
+//    }
+//    return UITableViewCellEditingStyleNone;
+//}
 
 
 #pragma mark  NSFetchedResultsControllerDelegate
