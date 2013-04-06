@@ -14,6 +14,7 @@
 @protocol GraffittiViewControllerDelegate <NSObject>
 
 - (void)didTappedToolBarIn:(GraffittiViewController*) graffittiViewController exitButton:(UIButton*) button;
+- (void)didTappedToolBarIn:(GraffittiViewController *)graffittiViewController captureButton:(UIButton *)button;
 
 @end
 
@@ -21,10 +22,15 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *labelColor;
 @property (weak, nonatomic) IBOutlet UILabel *labelFont;
+
+@property (weak, nonatomic) IBOutlet UIView *toolBar;
+
 @property (weak, nonatomic) IBOutlet Palette *paletteView;
 
 @property (weak, nonatomic) UISegmentedControl *widthSegment;
 @property (weak, nonatomic) UISegmentedControl *colorSegment;
+
+
 
 @property (assign, nonatomic) int segment;
 @property (assign, nonatomic) int segmentWidth;

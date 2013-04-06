@@ -45,7 +45,10 @@
 }
 
 - (IBAction)captureScreen:(id)sender {
-    
+
+    if ([self.delegate respondsToSelector:@selector(didTappedToolBarIn:captureButton:)]) {
+        [self.delegate didTappedToolBarIn:self captureButton:sender];
+    }
 }
 
 - (IBAction)exit:(id)sender {
@@ -241,4 +244,8 @@
     NSLog(@"%s", __FUNCTION__);
 }
 
+- (void)viewDidUnload {
+    [self setToolBar:nil];
+    [super viewDidUnload];
+}
 @end

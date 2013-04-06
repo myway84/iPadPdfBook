@@ -1122,4 +1122,18 @@
         [mainToolbar showToolbar]; [mainPagebar showPagebar]; [mainBottomBar showBottombar];
     }
 }
+
+- (void)didTappedToolBarIn:(GraffittiViewController *)graffittiViewController captureButton:(UIButton *)button
+{
+    graffittiViewController.toolBar.hidden = YES;
+    
+    UIGraphicsBeginImageContext(self.view.bounds.size);
+	[self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+	UIImage* image=UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+    
+    UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
+    
+    graffittiViewController.toolBar.hidden = NO;
+}
 @end

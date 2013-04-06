@@ -185,6 +185,7 @@
                         <outlet property="labelColor" destination="qb4-mY-dbp" id="9nz-Ta-uXM"/>
                         <outlet property="labelFont" destination="ttc-RX-a2k" id="Qj6-ZD-VOq"/>
                         <outlet property="paletteView" destination="Dnj-VS-2Zs" id="r1m-Ux-mG0"/>
+                        <outlet property="toolBar" destination="3FQ-oj-Bmo" id="MS3-rW-X2q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHu-0y-cjl" userLabel="First Responder" sceneMemberID="firstResponder"/>
