@@ -311,45 +311,6 @@
         <image name="note_button.png" width="69" height="35"/>
         <image name="noteview_toolbar.png" width="627" height="70"/>
     </resources>
-    <classes>
-        <class className="BookSelfViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BookSelfViewController.h"/>
-        </class>
-        <class className="BookTableViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BookTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="myTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="GraffittiViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GraffittiViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="allLineEraser:"/>
-                <relationship kind="action" name="captureScreen:"/>
-                <relationship kind="action" name="chooseColor:"/>
-                <relationship kind="action" name="chooseWidth:"/>
-                <relationship kind="action" name="exit:"/>
-                <relationship kind="action" name="lineClear:"/>
-                <relationship kind="action" name="lineRemove:"/>
-                <relationship kind="outlet" name="labelColor" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelFont" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="toolBar" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="NoteViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NoteViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="onTappedCancleButton:"/>
-                <relationship kind="action" name="onTappedSaveButton:"/>
-                <relationship kind="outlet" name="noteTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="noteView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="toolBar" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="Palette" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/Palette.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

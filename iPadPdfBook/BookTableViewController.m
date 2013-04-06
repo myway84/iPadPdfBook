@@ -23,6 +23,9 @@
     [self setCenterTitleView];
     
 	[self.fetchedResultsController performFetch:nil];
+    
+  // new way to set title color ios5.0+
+  //  self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor yellowColor] forKey:UITextAttributeTextColor];
 }
 
 - (void)setCenterTitleView
