@@ -25,11 +25,11 @@
 }
 
 - (IBAction)chooseColor:(id)sender {
-    [self colorSegment];
+    self.colorSegment.hidden = NO;
 }
 
 - (IBAction)chooseWidth:(id)sender {
-    [self segmentLineWidth];
+    self.widthSegment.hidden = NO;
 }
 
 - (IBAction)lineClear:(id)sender {
@@ -37,11 +37,11 @@
 }
 
 - (IBAction)lineRemove:(id)sender {
-    [self.paletteView myLineFinallyRemove];
+    [(Palette *)self.view myLineFinallyRemove];
 }
 
 - (IBAction)allLineEraser:(id)sender {
-    [self.paletteView myalllineclear];
+    [(Palette *)self.view myalllineclear];
 }
 
 - (IBAction)captureScreen:(id)sender {
@@ -62,13 +62,13 @@
 -(UISegmentedControl *)colorSegment
 {
     if (nil == _colorSegment) {
-        NSArray* segmentArray= @[@"黑", @"红", @"蓝", @"绿", @"黄", @"橙", @"灰", @"紫", @"紫", @"棕", @"粉红"];
+        NSArray* segmentArray= @[@"黑", @"红", @"蓝", @"绿", @"黄", @"橙", @"灰", @"紫", @"棕", @"粉红"];
         UISegmentedControl *seg =[[UISegmentedControl alloc] initWithItems:segmentArray];
         CGRect ButtonRect=CGRectMake(0, 0, 320, 40);
         [seg setFrame:ButtonRect];
         [seg setMomentary:YES];
         [seg addTarget:self action:@selector(segmentColorButton:)
-      forControlEvents:UIControlEventValueChanged];
+        forControlEvents:UIControlEventValueChanged];
         [seg setSegmentedControlStyle:UISegmentedControlStyleBar];
         [seg setTintColor:[UIColor darkGrayColor]];
         [self.view addSubview:seg];
@@ -127,7 +127,7 @@
 	}
 }
 
--(UISegmentedControl *)segmentLineWidth
+-(UISegmentedControl *)widthSegment
 {
     if (nil == _widthSegment) {
         NSArray* segmentArray= @[@"1.0", @"2.0", @"3.0", @"4.0", @"5.0", @"6.0", @"7.0", @"8.0", @"9.0", @"12.0"];
@@ -208,15 +208,13 @@
         self.colorSegment.hidden = YES;
     }
     
-	[self.colorSegment removeAllSegments];
-	[self.widthSegment removeAllSegments];
 	UITouch* touch=[touches anyObject];
 	self.myBeganpoint=[touch locationInView:self.view ];
 	
-	[self.paletteView Introductionpoint4:self.segment];
-	[self.paletteView Introductionpoint5:self.segmentWidth];
-	[self.paletteView Introductionpoint1];
-	[self.paletteView Introductionpoint3:self.myBeganpoint];
+	[(Palette *)self.view Introductionpoint4:self.segment];
+	[(Palette *)self.view Introductionpoint5:self.segmentWidth];
+	[(Palette *)self.view Introductionpoint1];
+	[(Palette *)self.view Introductionpoint3:self.myBeganpoint];
 	
 }
 //手指移动时候发出
@@ -224,14 +222,14 @@
 {
 	NSArray* MovePointArray=[touches allObjects];
 	self.myMovepoint=[[MovePointArray objectAtIndex:0] locationInView:self.view];
-	[self.paletteView Introductionpoint3:self.myMovepoint];
-	[self.paletteView setNeedsDisplay];
+	[(Palette *)self.view Introductionpoint3:self.myMovepoint];
+	[(Palette *)self.view setNeedsDisplay];
 }
 //当手指离开屏幕时候
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	[self.paletteView Introductionpoint2];
-	[self.paletteView setNeedsDisplay];
+	[(Palette *)self.view Introductionpoint2];
+	[(Palette *)self.view setNeedsDisplay];
 }
 //电话呼入等事件取消时候发出
 -(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
@@ -244,8 +242,5 @@
     NSLog(@"%s", __FUNCTION__);
 }
 
-- (void)viewDidUnload {
-    [self setToolBar:nil];
-    [super viewDidUnload];
-}
+
 @end

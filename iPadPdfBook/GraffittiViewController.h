@@ -25,8 +25,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *toolBar;
 
-@property (weak, nonatomic) IBOutlet Palette *paletteView;
-
 @property (weak, nonatomic) UISegmentedControl *widthSegment;
 @property (weak, nonatomic) UISegmentedControl *colorSegment;
 
