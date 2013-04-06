@@ -189,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHu-0y-cjl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="121" y="1090"/>
+            <point key="canvasLocation" x="1049" y="-110"/>
         </scene>
         <!--Note View Controller-->
         <scene sceneID="lNl-pi-GVK">
@@ -285,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CIM-KS-0Ud" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="993" y="-105"/>
+            <point key="canvasLocation" x="2097" y="-1239"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lz8-Ah-jhZ">
@@ -295,6 +295,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dd4-MF-IeJ">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.85098039219999999" green="0.87058823529999996" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

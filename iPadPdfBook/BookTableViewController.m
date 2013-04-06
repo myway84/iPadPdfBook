@@ -20,7 +20,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setCenterTitleView];
+    
 	[self.fetchedResultsController performFetch:nil];
+}
+
+- (void)setCenterTitleView
+{
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont boldSystemFontOfSize:17.0];
+    label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+    label.textAlignment = UITextAlignmentCenter;
+    
+    label.textColor = [UIColor blackColor];
+    self.navigationItem.titleView = label;
+    label.text = @"BookReader";
+    [label sizeToFit];
 }
 
 - (void)didReceiveMemoryWarning
