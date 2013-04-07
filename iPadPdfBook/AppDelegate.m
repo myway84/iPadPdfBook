@@ -15,22 +15,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+   [[DataModel shareInstance] managedObjectContext];
     
     DLog(@"%@", [PDFFileManager docuemntPath]);
     
     NSArray *pdfPathArray = [PDFFileManager fullNamePDFFileOfDocument];
-    NSManagedObjectContext *context = [[DataModel shareInstance] managedObjectContext];
     [pdfPathArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         DLog(@"%@ ",  obj);
         
         [Book createBookTitle:obj  path:[[PDFFileManager docuemntPath] stringByAppendingPathComponent:obj]];
     }];
-    
-//    NSError *error;
-//    if ([context hasChanges] && ![context save:&error]) {
-//        NSLog(@"%@", error);
-//    }
-    
     return YES;
 }
 							
