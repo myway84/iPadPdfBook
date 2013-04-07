@@ -11,7 +11,8 @@
 #import "DataModel.h"
 #import "ReaderViewController.h"
 
-@interface BookTableViewController ()<UITableViewDataSource, UITableViewDelegate, ReaderViewControllerDelegate, NSFetchedResultsControllerDelegate>
+@interface BookTableViewController ()<UITableViewDataSource, UITableViewDelegate, ReaderViewControllerDelegate, NSFetchedResultsControllerDelegate, UISearchBarDelegate>
+
 
 @end
 
@@ -21,29 +22,41 @@
 {
     [super viewDidLoad];
     
-    [self setCenterTitleView];
-    
-  // new way to set title color ios5.0+
-  //  self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor yellowColor] forKey:UITextAttributeTextColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{UITextAttributeTextColor : [UIColor blackColor]}];
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{UITextAttributeTextColor : [UIColor blackColor]} forState:UIControlStateNormal];
     
     [self.fetchedResultsController performFetch:nil];
     
-    [self.myTableView setEditing:NO animated:YES];
+    UIView *searchBarBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
+    searchBarBgView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    searchBarBgView.backgroundColor = [UIColor darkGrayColor];
+    
+    UISearchBar *search = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 500, 44)];
+    search.autoresizingMask = UIViewAutoresizingFlexibleWidth ;
+    search.center = searchBarBgView.center;
+    [searchBarBgView addSubview:search];
+    
+    search.delegate = self;
+    self.searchBar = search;
+    
+    self.myTableView.tableHeaderView = searchBarBgView;
 }
 
-- (void)setCenterTitleView
-{
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-    label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont boldSystemFontOfSize:17.0];
-    label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
-    label.textAlignment = UITextAlignmentCenter;
-    
-    label.textColor = [UIColor blackColor];
-    self.navigationItem.titleView = label;
-    label.text = @"BookReader";
-    [label sizeToFit];
-}
+
+// old way to set title color ios5.0+
+//- (void)setCenterTitleView
+//{
+//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+//    label.backgroundColor = [UIColor clearColor];
+//    label.font = [UIFont boldSystemFontOfSize:17.0];
+//    label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+//    label.textAlignment = UITextAlignmentCenter;
+//    
+//    label.textColor = [UIColor blackColor];
+//    self.navigationItem.titleView = label;
+//    label.text = @"BookReader";
+//    [label sizeToFit];
+//}
 
 - (void)didReceiveMemoryWarning
 {
@@ -63,6 +76,18 @@
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequset managedObjectContext:[[DataModel shareInstance] managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
     _fetchedResultsController.delegate = self;
     return _fetchedResultsController;
+}
+
+- (IBAction)setEditMode:(id)sender {
+    if (self.myTableView.isEditing) {
+        [self.navigationItem.rightBarButtonItem setTitle:@"Edit"];
+        [self.myTableView setEditing:NO animated:YES];
+    }
+    else
+    {
+        [self.navigationItem.rightBarButtonItem setTitle:@"Done"];
+        [self.myTableView setEditing:YES animated:YES];
+    }
 }
 
 #pragma mark UITableViewDataSourece
@@ -90,12 +115,13 @@
 
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return NO;
+    return YES;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleNone) {
+    DLog(@"%i", editingStyle);
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
        Book *deleteBook = [self.fetchedResultsController objectAtIndexPath:indexPath];
        [Book deleteBook:deleteBook];
     }
@@ -126,6 +152,13 @@
 //    return UITableViewCellEditingStyleNone;
 //}
 
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.myTableView.editing) {
+        return UITableViewCellEditingStyleDelete;
+    }
+    return UITableViewCellEditingStyleNone;
+}
 
 #pragma mark  NSFetchedResultsControllerDelegate
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
@@ -179,4 +212,12 @@
 {
     [self dismissViewControllerAnimated:NO completion:nil];
 }
+
+#pragma mark UISearchBarDelegate
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    
+}
+
+
 @end
