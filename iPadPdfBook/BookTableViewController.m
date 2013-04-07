@@ -18,6 +18,7 @@
 
 @implementation BookTableViewController
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -27,36 +28,16 @@
     
     [self.fetchedResultsController performFetch:nil];
     
-    UIView *searchBarBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
-    searchBarBgView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    searchBarBgView.backgroundColor = [UIColor darkGrayColor];
     
-    UISearchBar *search = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 500, 44)];
-    search.autoresizingMask = UIViewAutoresizingFlexibleWidth ;
-    search.center = searchBarBgView.center;
-    [searchBarBgView addSubview:search];
-    
-    search.delegate = self;
-    self.searchBar = search;
-    
-    self.myTableView.tableHeaderView = searchBarBgView;
 }
 
-
-// old way to set title color ios5.0+
-//- (void)setCenterTitleView
-//{
-//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-//    label.backgroundColor = [UIColor clearColor];
-//    label.font = [UIFont boldSystemFontOfSize:17.0];
-//    label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
-//    label.textAlignment = UITextAlignmentCenter;
-//    
-//    label.textColor = [UIColor blackColor];
-//    self.navigationItem.titleView = label;
-//    label.text = @"BookReader";
-//    [label sizeToFit];
-//}
+- (NSManagedObjectContext *)managedObjectContext
+{
+    if (nil == _managedObjectContext) {
+        _managedObjectContext = [DataModel shareInstance].managedObjectContext;
+    }
+    return _managedObjectContext;
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -114,10 +95,6 @@
 }
 
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DLog(@"%i", editingStyle);
@@ -143,14 +120,6 @@
     }
    
 }
-
-//- (UITableViewCellAccessoryType)tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath
-//{
-//    if (self.editing) {
-//        return UITableViewCellEditingStyleDelete;
-//    }
-//    return UITableViewCellEditingStyleNone;
-//}
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
