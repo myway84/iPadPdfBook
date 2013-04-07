@@ -27,7 +27,7 @@
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{UITextAttributeTextColor : [UIColor blackColor]} forState:UIControlStateNormal];
     
     [self.fetchedResultsController performFetch:nil];
-    
+    [self registKeyValueObserver];
     
 }
 
@@ -52,10 +52,11 @@
     }
     
     NSFetchRequest *fetchRequset = [NSFetchRequest fetchRequestWithEntityName:@"Book"];
-    fetchRequset.sortDescriptors = [NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"createTime" ascending:YES selector:@selector(localizedStandardCompare:)], nil];
+    fetchRequset.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createTime" ascending:YES selector:@selector(localizedStandardCompare:)]];
     
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequset managedObjectContext:[[DataModel shareInstance] managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
     _fetchedResultsController.delegate = self;
+    
     return _fetchedResultsController;
 }
 
@@ -71,6 +72,34 @@
     }
 }
 
+- (void)registKeyValueObserver
+{
+    [self addObserver:self forKeyPath:@"bookPredicate" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:nil];
+    [self addObserver:self forKeyPath:@"bookSortDescriptors" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString: @"bookPredicate"]) {
+        [self bookReloadData];
+    }
+    else if([keyPath isEqualToString:@"bookSortDescriptors"])
+    {
+        [self bookReloadData];
+    }
+    
+   DLog(@"old %@, new %@", change[NSKeyValueChangeOldKey], change[NSKeyValueChangeNewKey]);
+}
+
+- (void)bookReloadData
+{
+    self.fetchedResultsController.fetchRequest.predicate = self.bookPredicate;
+    self.fetchedResultsController.fetchRequest.sortDescriptors = self.bookSortDescriptors;
+    [self.fetchedResultsController performFetch:nil];
+    
+    [self.myTableView reloadData];
+}
 #pragma mark UITableViewDataSourece
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -185,7 +214,7 @@
 #pragma mark UISearchBarDelegate
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    
+    self.bookPredicate = [NSPredicate predicateWithFormat:@"title contains[c] %@", searchText];
 }
 
 
