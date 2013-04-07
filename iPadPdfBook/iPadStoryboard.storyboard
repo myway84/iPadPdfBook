@@ -54,12 +54,15 @@
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="GUT-kh-pd9">
                                         <rect key="frame" x="240" y="5" width="251" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <segments>
                                             <segment title="时间"/>
                                             <segment title="书名"/>
-                                            <segment title=""/>
+                                            <segment title="已读"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="sortSegement:" destination="fcx-Le-2N5" eventType="valueChanged" id="WsF-W7-kNo"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" red="0.85098039219999999" green="0.87058823529999996" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
@@ -351,48 +354,6 @@
         <image name="note_button.png" width="69" height="35"/>
         <image name="noteview_toolbar.png" width="627" height="70"/>
     </resources>
-    <classes>
-        <class className="BookSelfViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BookSelfViewController.h"/>
-        </class>
-        <class className="BookTableViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BookTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="setEditMode:"/>
-                <relationship kind="outlet" name="edit" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="myTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="GraffittiViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GraffittiViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="allLineEraser:"/>
-                <relationship kind="action" name="captureScreen:"/>
-                <relationship kind="action" name="chooseColor:"/>
-                <relationship kind="action" name="chooseWidth:"/>
-                <relationship kind="action" name="exit:"/>
-                <relationship kind="action" name="lineClear:"/>
-                <relationship kind="action" name="lineRemove:"/>
-                <relationship kind="outlet" name="labelColor" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelFont" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="toolBar" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="NoteViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NoteViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="onTappedCancleButton:"/>
-                <relationship kind="action" name="onTappedSaveButton:"/>
-                <relationship kind="outlet" name="noteTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="noteView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="toolBar" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="Palette" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/Palette.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

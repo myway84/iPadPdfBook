@@ -15,5 +15,6 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * path;
 @property (nonatomic, retain) NSDate * createTime;
+@property (nonatomic, retain) NSDate * readeTime;
 @property (nonatomic, retain) NSString *noteContent;
 @end

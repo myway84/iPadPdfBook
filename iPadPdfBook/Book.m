@@ -15,5 +15,6 @@
 @dynamic path;
 @dynamic createTime;
 @dynamic noteContent;
+@dynamic readeTime;
 
 @end

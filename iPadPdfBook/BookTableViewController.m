@@ -52,7 +52,7 @@
     }
     
     NSFetchRequest *fetchRequset = [NSFetchRequest fetchRequestWithEntityName:@"Book"];
-    fetchRequset.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createTime" ascending:YES selector:@selector(localizedStandardCompare:)]];
+    fetchRequset.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createTime" ascending:YES ]];
     
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequset managedObjectContext:[[DataModel shareInstance] managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
     _fetchedResultsController.delegate = self;
@@ -69,6 +69,22 @@
     {
         [self.navigationItem.rightBarButtonItem setTitle:@"Done"];
         [self.myTableView setEditing:YES animated:YES];
+    }
+}
+
+- (IBAction)sortSegement:(id)sender {
+    UISegmentedControl *segment = sender;
+    switch (segment.selectedSegmentIndex) {
+        case 0:
+            self.bookSortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createTime" ascending:YES ]];
+            break;
+            
+        case 1:
+            break;
+            self.bookSortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
+        case 2:
+            self.bookSortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"readeTime" ascending:YES]];
+            break;
     }
 }
 

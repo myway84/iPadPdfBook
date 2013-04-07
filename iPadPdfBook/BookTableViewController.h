@@ -20,5 +20,6 @@
 @property (strong, nonatomic) NSArray *bookSortDescriptors;
 
 - (IBAction)setEditMode:(id)sender;
+- (IBAction)sortSegement:(id)sender;
 
 @end

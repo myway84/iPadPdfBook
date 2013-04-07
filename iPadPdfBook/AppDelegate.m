@@ -26,10 +26,10 @@
         [Book createBookTitle:obj  path:[[PDFFileManager docuemntPath] stringByAppendingPathComponent:obj]];
     }];
     
-    NSError *error;
-    if ([context hasChanges] && ![context save:&error]) {
-        NSLog(@"%@", error);
-    }
+//    NSError *error;
+//    if ([context hasChanges] && ![context save:&error]) {
+//        NSLog(@"%@", error);
+//    }
     
     return YES;
 }
