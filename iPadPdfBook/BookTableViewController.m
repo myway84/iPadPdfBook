@@ -77,13 +77,16 @@
     switch (segment.selectedSegmentIndex) {
         case 0:
             self.bookSortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createTime" ascending:YES ]];
+            self.bookPredicate = nil;
             break;
             
         case 1:
-            break;
             self.bookSortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
+            self.bookPredicate = nil;
+            break;
         case 2:
-            self.bookSortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"readeTime" ascending:YES]];
+            self.bookSortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"readeTime" ascending:NO]];
+            self.bookPredicate = [NSPredicate predicateWithFormat:@"readeTime != nil"];
             break;
     }
 }
@@ -153,6 +156,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Book *book = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    book.readeTime = [NSDate date];
     
     NSString *phrase = nil;
     ReaderDocument *document = [ReaderDocument withDocumentFilePath:book.path password:phrase];
@@ -231,6 +235,10 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     self.bookPredicate = [NSPredicate predicateWithFormat:@"title contains[c] %@", searchText];
+    
+    if (0 == searchText.length) {
+        self.bookPredicate = nil;
+    }
 }
 
 

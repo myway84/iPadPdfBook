@@ -25,6 +25,11 @@
         
         [Book createBookTitle:obj  path:[[PDFFileManager docuemntPath] stringByAppendingPathComponent:obj]];
     }];
+    
+    NSError *error;
+    if ([[DataModel shareInstance].managedObjectContext hasChanges] && ![[DataModel shareInstance].managedObjectContext save:&error]) {
+        DLog(@"%@", [error localizedDescription]);
+    }
     return YES;
 }
 							

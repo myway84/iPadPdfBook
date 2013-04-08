@@ -20,8 +20,28 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         singleton = [[DataModel alloc] init];
+       
     });
     return singleton;
+}
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveData:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveData:) name:UIApplicationWillTerminateNotification object:nil];
+    }
+    return self;
+}
+
+- (void)saveData:(NSNotification *)notificationObject
+{
+    NSError *error;
+    
+    if ([self.managedObjectContext hasChanges] && ![self.managedObjectContext save:&error]) {
+        DLog(@"%@", [error localizedDescription]);
+    }
 }
 
 - (NSString *)appName
