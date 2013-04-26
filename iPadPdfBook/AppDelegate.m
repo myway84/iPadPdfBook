@@ -23,7 +23,8 @@
     [pdfPathArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         DLog(@"%@ ",  obj);
         
-        [Book createBookTitle:obj  path:[[PDFFileManager docuemntPath] stringByAppendingPathComponent:obj]];
+        NSString *title = [obj stringByDeletingPathExtension];
+        [Book createBookTitle:title  path:[[PDFFileManager docuemntPath] stringByAppendingPathComponent:obj]];
     }];
     
     NSError *error;

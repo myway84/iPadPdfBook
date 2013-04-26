@@ -10,6 +10,7 @@
 #import "Book+Operation.h"
 #import "DataModel.h"
 #import "ReaderViewController.h"
+#import "CollectionViewController.h"
 
 @interface BookTableViewController ()<UITableViewDataSource, UITableViewDelegate, ReaderViewControllerDelegate, NSFetchedResultsControllerDelegate, UISearchBarDelegate>
 
@@ -89,6 +90,35 @@
             self.bookPredicate = [NSPredicate predicateWithFormat:@"readeTime != nil"];
             break;
     }
+}
+
+- (IBAction)segementChange:(id)sender {
+    UISegmentedControl *segement = sender;
+    if (0 == segement.selectedSegmentIndex) {
+        UIViewController *vc = [self.childViewControllers lastObject];
+//        [vc.view removeFromSuperview];
+//        [vc removeFromParentViewController];
+        vc.view.hidden = YES;
+        
+    }
+    
+    if (1 == segement.selectedSegmentIndex)
+    {
+        
+    }
+}
+
+- (IBAction)pushToAnotherViewController:(id)sender {
+    
+    [self performSegueWithIdentifier:@"pushIdentifier" sender:sender];
+}
+
+- (IBAction)tappedShareBarItem:(id)sender {
+    NSString *textToShare = @"我想分享这本书给你。";
+    NSArray *activityItems = @[textToShare];
+    UIActivityViewController *vc = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    vc.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeCopyToPasteboard, UIActivityTypeAssignToContact,UIActivityTypeSaveToCameraRoll];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)registKeyValueObserver
@@ -240,6 +270,5 @@
         self.bookPredicate = nil;
     }
 }
-
 
 @end

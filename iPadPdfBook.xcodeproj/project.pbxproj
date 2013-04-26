@@ -10,6 +10,10 @@
 		043E2B51170D7F6A00FC1ED5 /* textview_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 043E2B50170D7F6A00FC1ED5 /* textview_background.png */; };
 		043E2B58170D8D6600FC1ED5 /* write_note_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 043E2B57170D8D6600FC1ED5 /* write_note_button.png */; };
 		043E2B5B170D94D800FC1ED5 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043E2B5A170D94D800FC1ED5 /* NoteViewController.m */; };
+		045B4E811723DD6400AEBE64 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045B4E801723DD6400AEBE64 /* TestView.m */; };
+		045B4E911723F0D600AEBE64 /* Wood-Planks.png in Resources */ = {isa = PBXBuildFile; fileRef = 045B4E8F1723F0D600AEBE64 /* Wood-Planks.png */; };
+		045B4E921723F0D600AEBE64 /* Wood-Planks@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 045B4E901723F0D600AEBE64 /* Wood-Planks@2x.png */; };
+		045B4E991723F18500AEBE64 /* PdfView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045B4E981723F18500AEBE64 /* PdfView.m */; };
 		0498AEC4170D2D5C004507D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0498AEC3170D2D5C004507D2 /* UIKit.framework */; };
 		0498AEC6170D2D5C004507D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0498AEC5170D2D5C004507D2 /* Foundation.framework */; };
 		0498AEC8170D2D5C004507D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0498AEC7170D2D5C004507D2 /* CoreGraphics.framework */; };
@@ -82,6 +86,12 @@
 		0498AFD4170D77F0004507D2 /* note_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0498AFD3170D77F0004507D2 /* note_button.png */; };
 		049D2BAE170E9FC40025E31E /* GraffittiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049D2BAD170E9FC40025E31E /* GraffittiViewController.m */; };
 		049D2BCD170EAF2D0025E31E /* Palette.m in Sources */ = {isa = PBXBuildFile; fileRef = 049D2BCC170EAF2D0025E31E /* Palette.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		04A755901724008C00ECBB4A /* ViewSeuge.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A7558F1724008C00ECBB4A /* ViewSeuge.m */; };
+		04C39C1517255BBA005F06CE /* buttonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 04C39C1417255BBA005F06CE /* buttonBackground.png */; };
+		04C39C1D17255EB0005F06CE /* Apple-Wood.png in Resources */ = {isa = PBXBuildFile; fileRef = 04C39C1B17255EB0005F06CE /* Apple-Wood.png */; };
+		04C39C1E17255EB0005F06CE /* Apple-Wood@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04C39C1C17255EB0005F06CE /* Apple-Wood@2x.png */; };
+		04C39C2117255F0F005F06CE /* ShelfView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C39C2017255F0F005F06CE /* ShelfView.m */; };
+		04C9AAC51723C0AF00CF5504 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C9AAC41723C0AF00CF5504 /* CollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +99,12 @@
 		043E2B57170D8D6600FC1ED5 /* write_note_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = write_note_button.png; sourceTree = "<group>"; };
 		043E2B59170D94D800FC1ED5 /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
 		043E2B5A170D94D800FC1ED5 /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
+		045B4E7F1723DD6400AEBE64 /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
+		045B4E801723DD6400AEBE64 /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
+		045B4E8F1723F0D600AEBE64 /* Wood-Planks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Wood-Planks.png"; sourceTree = "<group>"; };
+		045B4E901723F0D600AEBE64 /* Wood-Planks@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Wood-Planks@2x.png"; sourceTree = "<group>"; };
+		045B4E971723F18500AEBE64 /* PdfView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PdfView.h; sourceTree = "<group>"; };
+		045B4E981723F18500AEBE64 /* PdfView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PdfView.m; sourceTree = "<group>"; };
 		0498AEBF170D2D5C004507D2 /* iPadPdfBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPadPdfBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0498AEC3170D2D5C004507D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0498AEC5170D2D5C004507D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -201,6 +217,15 @@
 		049D2BAD170E9FC40025E31E /* GraffittiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraffittiViewController.m; sourceTree = "<group>"; };
 		049D2BCB170EAF2C0025E31E /* Palette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Palette.h; sourceTree = "<group>"; };
 		049D2BCC170EAF2D0025E31E /* Palette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Palette.m; sourceTree = "<group>"; };
+		04A7558E1724008C00ECBB4A /* ViewSeuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewSeuge.h; sourceTree = "<group>"; };
+		04A7558F1724008C00ECBB4A /* ViewSeuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewSeuge.m; sourceTree = "<group>"; };
+		04C39C1417255BBA005F06CE /* buttonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonBackground.png; sourceTree = "<group>"; };
+		04C39C1B17255EB0005F06CE /* Apple-Wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Apple-Wood.png"; sourceTree = "<group>"; };
+		04C39C1C17255EB0005F06CE /* Apple-Wood@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Apple-Wood@2x.png"; sourceTree = "<group>"; };
+		04C39C1F17255F0F005F06CE /* ShelfView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShelfView.h; sourceTree = "<group>"; };
+		04C39C2017255F0F005F06CE /* ShelfView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShelfView.m; sourceTree = "<group>"; };
+		04C9AAC31723C0AF00CF5504 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		04C9AAC41723C0AF00CF5504 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +291,14 @@
 				0498AF81170D30C1004507D2 /* BookTableViewController.h */,
 				0498AF82170D30C2004507D2 /* BookTableViewController.m */,
 				0498AF63170D2DF0004507D2 /* iPadStoryboard.storyboard */,
+				04C9AAC31723C0AF00CF5504 /* CollectionViewController.h */,
+				04C9AAC41723C0AF00CF5504 /* CollectionViewController.m */,
+				045B4E7F1723DD6400AEBE64 /* TestView.h */,
+				045B4E801723DD6400AEBE64 /* TestView.m */,
+				045B4E971723F18500AEBE64 /* PdfView.h */,
+				045B4E981723F18500AEBE64 /* PdfView.m */,
+				04C39C1F17255F0F005F06CE /* ShelfView.h */,
+				04C39C2017255F0F005F06CE /* ShelfView.m */,
 				043E2B59170D94D800FC1ED5 /* NoteViewController.h */,
 				043E2B5A170D94D800FC1ED5 /* NoteViewController.m */,
 				049D2BAC170E9FC40025E31E /* GraffittiViewController.h */,
@@ -274,6 +307,8 @@
 				0498AFC1170D69BD004507D2 /* NoteView.m */,
 				049D2BCB170EAF2C0025E31E /* Palette.h */,
 				049D2BCC170EAF2D0025E31E /* Palette.m */,
+				04A7558E1724008C00ECBB4A /* ViewSeuge.h */,
+				04A7558F1724008C00ECBB4A /* ViewSeuge.m */,
 				0498AECA170D2D5C004507D2 /* Supporting Files */,
 			);
 			path = iPadPdfBook;
@@ -282,6 +317,11 @@
 		0498AECA170D2D5C004507D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				045B4E8F1723F0D600AEBE64 /* Wood-Planks.png */,
+				045B4E901723F0D600AEBE64 /* Wood-Planks@2x.png */,
+				04C39C1B17255EB0005F06CE /* Apple-Wood.png */,
+				04C39C1C17255EB0005F06CE /* Apple-Wood@2x.png */,
+				04C39C1417255BBA005F06CE /* buttonBackground.png */,
 				0498AFD1170D72DF004507D2 /* noteview_toolbar.png */,
 				043E2B57170D8D6600FC1ED5 /* write_note_button.png */,
 				0498AFD3170D77F0004507D2 /* note_button.png */,
@@ -512,6 +552,11 @@
 				0498AFD4170D77F0004507D2 /* note_button.png in Resources */,
 				043E2B51170D7F6A00FC1ED5 /* textview_background.png in Resources */,
 				043E2B58170D8D6600FC1ED5 /* write_note_button.png in Resources */,
+				045B4E911723F0D600AEBE64 /* Wood-Planks.png in Resources */,
+				045B4E921723F0D600AEBE64 /* Wood-Planks@2x.png in Resources */,
+				04C39C1517255BBA005F06CE /* buttonBackground.png in Resources */,
+				04C39C1D17255EB0005F06CE /* Apple-Wood.png in Resources */,
+				04C39C1E17255EB0005F06CE /* Apple-Wood@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,6 +605,11 @@
 				043E2B5B170D94D800FC1ED5 /* NoteViewController.m in Sources */,
 				049D2BAE170E9FC40025E31E /* GraffittiViewController.m in Sources */,
 				049D2BCD170EAF2D0025E31E /* Palette.m in Sources */,
+				04C9AAC51723C0AF00CF5504 /* CollectionViewController.m in Sources */,
+				045B4E811723DD6400AEBE64 /* TestView.m in Sources */,
+				045B4E991723F18500AEBE64 /* PdfView.m in Sources */,
+				04A755901724008C00ECBB4A /* ViewSeuge.m in Sources */,
+				04C39C2117255F0F005F06CE /* ShelfView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

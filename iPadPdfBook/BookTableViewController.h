@@ -22,4 +22,9 @@
 - (IBAction)setEditMode:(id)sender;
 - (IBAction)sortSegement:(id)sender;
 
+- (IBAction)segementChange:(id)sender;
+- (IBAction)pushToAnotherViewController:(id)sender;
+
+- (IBAction)tappedShareBarItem:(id)sender;
+
 @end
